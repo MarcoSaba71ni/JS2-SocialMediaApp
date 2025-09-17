@@ -13,25 +13,21 @@ export async function apiGet(endpoint, token = null) {
         console.warn("No token provided for API request to:", endpoint);
     }
     const response = await fetch(`${API_BASE}${endpoint}`, { headers });
-    if (!response.ok) {
-        let message = `Request failed with status ${response.status}`;
-        try {
-            const errorData = await response.json();
-            // API might send detailed error info
-            message += ` - ${errorData.errors?.[0]?.message || "No additional info"}`;
-        } catch {
-            // fallback if response is not JSON
-        }
-        throw new Error(message);
+    const data = await response.json();
+
+    if(!response.ok) {
+        const errorMessage = data?.errors?.[0]?.errorMessage ||  `Request failed with status ${response.status}`;
+        throw new ApiError(errorMessage, response.status)
+        
     }
 
-    const data = await response.json();
     return data;
 };
 
 export async function apiPost(endpoint, data, token = null) {
     const headers = {
         "Content-Type": "application/json",
+        "X-Noroff-API-Key": API_KEY,
     } 
     if (token) headers.Authorization = `Bearer ${token}`;
 
@@ -44,6 +40,14 @@ export async function apiPost(endpoint, data, token = null) {
         const errorData = await response.json();
         throw new Error(errorData.errors?.[0]?.message || "API POST request failed");
     } return await response.json();
+}
+
+export class ApiError extends Error {
+  constructor(message, status) {
+    super(message);
+    this.name = "ApiError";
+    this.status = status;
+  }
 }
 
 // deletePost
