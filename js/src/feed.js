@@ -12,6 +12,7 @@ async function loadFeed() {
 
     try {
         const token = getToken();
+        console.log("Token from storage:", token);
         const posts = await getAllPosts(token);
         console.log(posts);
 

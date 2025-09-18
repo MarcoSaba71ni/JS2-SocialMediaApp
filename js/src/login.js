@@ -16,8 +16,8 @@ loginForm.addEventListener('submit', async (event) => {
         const result = await loginUser(credentials);
         console.log("Login result:", result);
 
-        if (result.accessToken) {
-            saveToken(result.accessToken);
+        if (result.data.accessToken) {
+            saveToken(result.data.accessToken);
             window.location.href = "../../pages/feed.html";
         } else if (result.errors?.[0]) {
             alert(result.errors[0].message);
@@ -34,7 +34,7 @@ loginForm.addEventListener('submit', async (event) => {
                 alert('Unexpected error: ' + error.message);
             }
         } else {
-            alert('Network error: ' + error.message);
+            alert(error.message);
         }
     }
 });

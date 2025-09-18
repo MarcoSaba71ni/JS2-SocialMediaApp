@@ -37,8 +37,8 @@ export async function apiPost(endpoint, data, token = null) {
         body: JSON.stringify(data),
     });
     if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.errors?.[0]?.message || "API POST request failed");
+        const errorMessage = data?.errors?.[0]?.message || `Request failed with status ${response.status}`;
+        throw new ApiError(errorMessage, response.status);
     } return await response.json();
 }
 
