@@ -10,8 +10,8 @@ const profileEndpoint = '/social/posts';
 const creatingForm = document.getElementById('creating-form');
 
 
-creatingForm.addEventListener("submit", async () => {
-
+creatingForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
         
 
 
