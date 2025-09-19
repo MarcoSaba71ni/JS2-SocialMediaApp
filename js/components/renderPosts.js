@@ -1,14 +1,19 @@
 
 export function postContent(post) {
     const postWrapper = document.createElement('div');
+    postWrapper.classList = 'post-content';
 
-    const title = document.createElement('a');
-    title.href = `../../pages/post.html?id=${post.id}`;
-    title.textContent = post.title;
+
+    
 
     const author = document.createElement('h2');
     author.textContent = `${post.author?.name}`;
     console.log(post.author);
+    
+    const title = document.createElement('a');
+    title.href = `../../pages/post.html?id=${post.id}`;
+    title.textContent = post.title;
+
 
     if(post.media?.url) {
         const mediaUrl = document.createElement('img');

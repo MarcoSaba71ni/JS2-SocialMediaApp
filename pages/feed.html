@@ -18,7 +18,18 @@
             </div>
         </header>
         <main>
-            <div class="feed-main" id="feed-posts">
+            <div class="post-creation">
+                <form class="create-section" id="creating-form">
+                    <input type="text" class="input-feed" id="title" placeholder="Post title" required>
+                    <textarea type="text" id="body" placeholder="Body"></textarea>
+                    <input type="text" id="media-url" class="input-feed" placeholder="Image URL">
+                    <input type="text" id="media-alt" class="input-feed" placeholder="Image description">
+                    <button type="submit" class="feed-btn">
+                        Create
+                    </button>
+                </form>
+            </div>
+            <div class="feed-grid" id="feed-posts">
 
             </div>
         </main>
@@ -29,5 +40,6 @@
     <script type="module" src="../js/src/feed.js"></script>
     <script type="module" src="../js/components/header.js"></script>
     <script type="module" src="../js/components/footer.js"></script>
+    <script type="module" src="../js/components/postCreation.js"></script>
 </body>
 </html>
