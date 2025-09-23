@@ -1,4 +1,5 @@
 import { ApiError, apiPost } from "../api/api.js";
+import { getToken } from "../storage/local.js";
 import { API_BASE } from "../utils/constants.js";
 
 const title = document.getElementById('title');
@@ -11,10 +12,9 @@ const creatingForm = document.getElementById('creating-form');
 
 
 creatingForm.addEventListener("submit", async (event) => {
+
     event.preventDefault();
         
-
-
     const title = document.getElementById('title').value.trim();
     const body = document.getElementById('body').value.trim();
     const mediaUrl = document.getElementById('media-url').value.trim();
@@ -29,12 +29,12 @@ creatingForm.addEventListener("submit", async (event) => {
         }
     }
     
-    const token = localStorage.getItem("accessToken");
+    const token = getToken();
 
     try {
-        const response = await apiPost(profileEndpoint, info, token);
-        const data = response.json();
-        console-log(data);
+        const data = await apiPost(profileEndpoint, info, token);
+        console.log(data);
+
         creatingForm.reset();
     } catch (error){
         throw new ApiError;

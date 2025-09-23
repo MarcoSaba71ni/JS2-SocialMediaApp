@@ -11,9 +11,6 @@
     color: #1B0D6F;
 }
 
-.login-wrapper {
-
-}
 
 .form-wrapper {
     display: flex;
@@ -37,8 +34,9 @@
     width: 105px;
     height: 50px;
     color: white;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #1B0D6F;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #d9d7df;
     border-radius: 15px;
     font-size: 22px;
 }
@@ -47,6 +45,31 @@
     color: #1B0D6F;
     background-color: aliceblue;
     cursor: pointer;
+}
+
+.delete-cta {
+    width: 105px;
+    height: 50px;
+    color: white;
+    background-color: red;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #d9d7df;
+    border-radius: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.delete-cta:hover {
+    color: red;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+.div-edit-del {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 10px;
 }
 
 .index-logo {

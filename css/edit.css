@@ -1,0 +1,23 @@
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.edit-input {
+    width: 300px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    background-color: #1B0D6F;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.edit-wrapper {
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+}

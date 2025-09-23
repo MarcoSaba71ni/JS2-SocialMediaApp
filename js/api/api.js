@@ -42,6 +42,46 @@ export async function apiPost(endpoint, data, token = null) {
     } return await response.json();
 }
 
+export async function apiUpdate(endpoint, data, token = null) {
+    const headers = {
+        "Content-Type": "application/json",
+        "X-Noroff-API-Key": API_KEY,
+    }
+    if (token) headers.Authorization = `Bearer ${token}`;
+
+    const response = await fetch(`${API_BASE}${endpoint}`, {
+        method : "PUT",
+        headers,
+        body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+        const errorMessage = data?.errors?.[0]?.message || `Request failed with status ${response.status}`;
+        throw new ApiError(errorMessage, response.status);
+    } return await response.json();
+    
+}
+
+export async function deleteApi(endpoint, token = null) {
+    const headers = {
+        "Content-Type": "application/json",
+        "X-Noroff-API-Key": API_KEY,
+    }
+    if (token) headers.Authorization = `Bearer ${token}`;
+
+    const response = await fetch(`${API_BASE}${endpoint}`, {
+        method: 'DELETE',
+        headers,
+    })
+
+      if (!response.ok) {
+
+        throw new ApiError( response.status);
+    }
+
+    return true; // success
+}
+
 export class ApiError extends Error {
   constructor(message, status) {
     super(message);
@@ -51,7 +91,7 @@ export class ApiError extends Error {
 }
 
 // deletePost
-// updatePost
+
 
 /* TO DO 
     - check API endpoint for GET, POST, DELETE and UPDATE;

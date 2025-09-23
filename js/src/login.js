@@ -17,7 +17,9 @@ loginForm.addEventListener('submit', async (event) => {
         console.log("Login result:", result);
 
         if (result.data.accessToken) {
-            saveToken(result.data.accessToken);
+            saveToken(result.data.accessToken, {
+                 name: result.data.name, email: result.data.email
+            });
             window.location.href = "../../pages/feed.html";
         } else if (result.errors?.[0]) {
             alert(result.errors[0].message);
