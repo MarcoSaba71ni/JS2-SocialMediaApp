@@ -14,7 +14,7 @@ export function deleteToken() {
      localStorage.removeItem("user");
 }
 
-export function getUser(user) {
-    localStorage.getItem("user");
+export function getUser() {
+    const user = localStorage.getItem("user");
     return user ? JSON.parse(user) : null;
 } 

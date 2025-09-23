@@ -22,19 +22,29 @@ function renderHeader() {
     searchBar.classList.add('header-search');
     
 
+    const btnDiv = document.getElementById('btn-div');
+
+
     const profileDiv = document.createElement('div');
     const profileLink = document.createElement('a');
     profileLink.textContent = 'Profile';
     profileLink.href = '../../pages/profile.html';
     profileLink.classList = 'profile-link';
 
+    const logOutBtn = document.createElement('button');
+    logOutBtn.type = 'submit';
+    logOutBtn.textContent = 'Logout'
+    logOutBtn.classList = 'log-out-btn';
+    logOutBtn.id = 'logout-btn';
+
+    btnDiv.append(profileDiv, logOutBtn);
     
 
     logoDiv.appendChild(logoAssembler);
     logoAssembler.appendChild(logo);
     profileDiv.appendChild(profileLink);
 
-    jsHeader.append(logoDiv, searchBar, profileDiv);
+    jsHeader.append(logoDiv, searchBar, btnDiv);
 
 }
 

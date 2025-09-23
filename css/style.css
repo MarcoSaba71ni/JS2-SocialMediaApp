@@ -96,7 +96,7 @@
     height: 60px;
     background-color: #00E0AC;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .logo-div {
@@ -104,15 +104,18 @@
 }
 
 .btn-div {
+    display: flex;
+    gap: 10px;
     align-items: center;
-    padding-top: 15px;
+    padding-top: 5px;
+    justify-content: right;
 }
 
 .js-header {
     display: flex;   
     flex-direction: row;          /* arrange children in a row */
     align-items: center;       /* vertically center them */
-    justify-content: space-between; /* logo left, search bar right */
+    justify-content: space-around; /* logo left, search bar right */
     padding: 10px 20px;
     gap: 20px;     
 }

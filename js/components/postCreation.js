@@ -1,5 +1,7 @@
 import { ApiError, apiPost } from "../api/api.js";
 import { getToken } from "../storage/local.js";
+import { getAllPosts } from "../api/posts.js";
+import { postContent } from "./renderPosts.js";
 import { API_BASE } from "../utils/constants.js";
 
 const title = document.getElementById('title');
@@ -32,9 +34,16 @@ creatingForm.addEventListener("submit", async (event) => {
     const token = getToken();
 
     try {
-        const data = await apiPost(profileEndpoint, info, token);
-        console.log(data);
+        const createdPost = await apiPost(profileEndpoint, info, token);
 
+        const fullPost = await getAllPosts(token);
+
+        const newPostData = fullPost.data.find(p => p.id === createdPost.data.id);
+
+        const feedPosts = document.getElementById('feed-posts');
+        const newPost = postContent(newPostData);
+
+        feedPosts.prepend(newPost);
         creatingForm.reset();
     } catch (error){
         throw new ApiError;

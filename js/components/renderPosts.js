@@ -29,6 +29,8 @@ export function postContent(post) {
     const body = document.createElement('p');
     body.textContent = post.body;
 
+    postWrapper.append(title, author, body, email);
+
     const user = getUser();
 
     if (user && post.author?.email === user.email) {
@@ -44,26 +46,21 @@ export function postContent(post) {
         deleteBtn.classList = 'delete-cta';
         deleteBtn.id = 'delete-btn';
         deleteBtn.textContent = 'Delete';
-        
-        divEdtDel.append(editBtn, deleteBtn);
 
-        deleteBtn.addEventListener('click', () => {
-        deletePost(post.id, getToken());
-    })
-
-
-    editBtn.addEventListener('click', () => {
+        editBtn.addEventListener('click', () => {
         window.location.href = `../../pages/edit.html?id=${post.id}`;
         });
+        
+        deleteBtn.addEventListener('click', () => {
+        deletePost(post.id, getToken());
+        })
+
+        divEdtDel.append(editBtn, deleteBtn);
 
         postWrapper.appendChild(divEdtDel);
+      
     }
 
-  
-
-
-
-    postWrapper.append(title, author, body, email);
     return postWrapper;
 }   
 
