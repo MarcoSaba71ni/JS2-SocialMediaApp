@@ -20,3 +20,16 @@ export function profileInfoContent(profile) {
 
   profileInfo.append(name, email, bio);
 }
+
+export function profilePostContent(post) {
+    const profilePosts = document.getElementById('profile-posts');
+    
+    const title = document.createElement('h2');
+    title.textContent = post.title ?? "No title found";
+
+    const body = document.createElement('h2');
+    body.textContent = post.body ?? "No body found";
+
+    profilePosts.append(title, body);
+
+}
