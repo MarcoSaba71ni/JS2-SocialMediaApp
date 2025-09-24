@@ -1,4 +1,63 @@
-.profile-main h1 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding-left: 10%;
+.profile-main {
+    padding: 30px 0  0 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-info {
+    display: flex;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: #00E0AC;
+  padding: 20px;
+}
+
+.profile-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* keeps text aligned to top of images */
+  gap: 30px;
+  color: #1B0D6F;
+}
+
+.profile-images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center; /* center avatar below banner */
+}
+
+.profile-banner {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.profile-avatar {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #1B0D6F;
+  margin-top: 10px;
+}
+
+.profile-info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profile-wrapper h2 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+}
+
+.profile-counts {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+  font-weight: bold;
 }
