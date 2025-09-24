@@ -6,10 +6,14 @@ export function postContent(post) {
     const postWrapper = document.createElement('div');
     postWrapper.classList = 'post-content';
 
+    const authorLink = document.createElement('a');
+    authorLink.href =  `./profile.html?author=${post.author.name}`;
     const author = document.createElement('h2');
     author.textContent = `${post.author?.name}`;
     console.log(post.author);
     
+    authorLink.appendChild(author);
+
     const title = document.createElement('a');
     title.href = `../../pages/post.html?id=${post.id}`;
     title.textContent = post.title;
@@ -29,7 +33,7 @@ export function postContent(post) {
     const body = document.createElement('p');
     body.textContent = post.body;
 
-    postWrapper.append(title, author, body, email);
+    postWrapper.append(title, authorLink, body, email);
 
     const user = getUser();
 
