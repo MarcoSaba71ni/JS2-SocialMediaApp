@@ -70,13 +70,41 @@ export function profileInfoContent(profile) {
 
 export function profilePostContent(post) {
     const profilePosts = document.getElementById('profile-posts');
-    
+
+    const postCard = document.createElement('div');
+    postCard.classList = 'post-card';
+
+
     const title = document.createElement('h2');
     title.textContent = post.title ?? "No title found";
 
     const body = document.createElement('p');
     body.textContent = post.body ?? "No body found";
 
-    profilePosts.append(title, body);
 
+    const tags = document.createElement('p');
+    tags.textContent = post.tags?.length
+        ? `Tags: ${post.tags.join(', ')}`
+        : "No tags";
+
+    let mediaImg = null;
+    if (post.media?.url) {
+        mediaImg = document.createElement('img');
+        mediaImg.src = post.media.url;
+        mediaImg.alt = post.media.alt ?? "Post media";
+        mediaImg.classList = 'post-media';
+    }
+
+    const created = document.createElement('p');
+    const date = new Date(post.created);
+    created.textContent = `Created: ${date.toLocaleString()}`;
+
+    const counts = document.createElement('p');
+    counts.textContent = `Comments: ${post._count?.comments ?? 0} | Reactions: ${post._count?.reactions ?? 0}`;
+
+  
+    postCard.append(title, body, tags, created, counts);
+    if (mediaImg) postCard.appendChild(mediaImg);
+
+    profilePosts.appendChild(postCard);
 }
