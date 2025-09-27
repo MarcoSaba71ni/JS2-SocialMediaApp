@@ -11,7 +11,6 @@ export function searchSetup(allPosts, renderPosts) {
 
 function doSearch(query, allPosts, renderPosts) {
   if (!query) {
-    // if input is empty → show all posts
     renderPosts(allPosts);
     return;
   }

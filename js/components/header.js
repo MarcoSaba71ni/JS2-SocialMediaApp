@@ -17,7 +17,7 @@ function renderHeader() {
 
     const searchBar = document.createElement('input');
     searchBar.type = 'text';
-    searchBar.placeholder = 'Search posts...';
+    searchBar.placeholder = 'Search Post and Profiles...';
     searchBar.id = 'search-bar';
     searchBar.classList.add('header-search');
     

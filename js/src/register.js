@@ -11,9 +11,14 @@ registerForm.addEventListener("submit", async (event) => {
         password: registerForm.password.value
     };
 
+    if (!userData.name || !userData.email || !userData.password) {
+    alert("All fields are required!");
+    return;
+}
+
     if(userData.password.length < 8) {
             alert("Password must be at least 8 characters long.");
-        return; // stop here, don’t call the API
+        return; 
     }
 
     console.log(userData);
