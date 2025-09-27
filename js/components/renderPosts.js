@@ -1,6 +1,7 @@
 import { getToken } from "../storage/local.js";
 import { deletePost } from "../utils/deletePost.js";
 import { getUser } from "../storage/local.js";
+import { followProfile, unfollowProfile } from "./follow-unfollow.js";
 
 export function postContent(post) {
     const postWrapper = document.createElement('div');
@@ -63,6 +64,28 @@ export function postContent(post) {
 
         postWrapper.appendChild(divEdtDel);
       
+    }
+     // 🔹 If it's NOT your own post → show Follow/Unfollow
+    else if (user) {
+        const divFollow = document.createElement('div');
+        divFollow.classList = 'div-follow';
+
+        const followBtn = document.createElement('button');
+        followBtn.classList = 'btn-follow';
+        followBtn.textContent = 'Follow';
+
+        followBtn.addEventListener('click', async () => {
+            if (followBtn.textContent === 'Follow') {
+                await followProfile(post.author.name);
+                followBtn.textContent = 'Unfollow';
+            } else {
+                await unfollowProfile(post.author.name);
+                followBtn.textContent = 'Follow';
+            }
+        });
+
+        divFollow.appendChild(followBtn);
+        postWrapper.appendChild(divFollow);
     }
 
     return postWrapper;

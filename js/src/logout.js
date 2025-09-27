@@ -1,8 +1,13 @@
 import { deleteToken } from "../storage/local.js";
 
-const logOutBtn = document.getElementById('logout-btn');
-
-logOutBtn.addEventListener("click", ()=> {
-    deleteToken();
-    window.location.href = '../../pages/index.html';
+// logout.js
+document.addEventListener("DOMContentLoaded", () => {
+  const logoutBtn = document.querySelector("#logout-btn");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("accessToken");
+      localStorage.removeItem("user");
+      window.location.href = "../../index.html"; 
+    });
+  }
 });
