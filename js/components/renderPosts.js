@@ -38,6 +38,18 @@ export function postContent(post) {
 
     const user = getUser();
 
+    const countsDiv = document.createElement('div');
+    countsDiv.classList = 'post-counts';
+
+    const commentsCount = document.createElement('span');
+    commentsCount.textContent = `${post._count?.comments || 0} comments`;
+
+    const reactionsCount = document.createElement('span');
+    reactionsCount.textContent = `${post._count?.reactions || 0} reactions`;
+
+    countsDiv.append(commentsCount, reactionsCount);
+    postWrapper.appendChild(countsDiv);
+    
     if (user && post.author?.email === user.email) {
         const divEdtDel = document.createElement('div');
         divEdtDel.classList = 'div-edit-del';
@@ -65,7 +77,7 @@ export function postContent(post) {
         postWrapper.appendChild(divEdtDel);
       
     }
-     // 🔹 If it's NOT your own post → show Follow/Unfollow
+
     else if (user) {
         const divFollow = document.createElement('div');
         divFollow.classList = 'div-follow';
@@ -87,6 +99,60 @@ export function postContent(post) {
         divFollow.appendChild(followBtn);
         postWrapper.appendChild(divFollow);
     }
+
+    const commentsSection = document.createElement('div');
+    commentsSection.classList = 'comments-section';
+
+if (post.comments && post.comments.length > 0) {
+    post.comments.forEach(c => {
+        const commentDiv = document.createElement('div');
+        commentDiv.classList = 'comment'; // main wrapper
+
+        const authorName = document.createElement('strong');
+        authorName.classList = 'comment-author'; // added class
+        authorName.textContent = c.author?.name || c.owner;
+
+        const commentBody = document.createElement('p');
+        commentBody.classList = 'comment-body'; // added class
+        commentBody.textContent = c.body;
+
+        const createdDate = document.createElement('span');
+        createdDate.classList = 'comment-date'; // already exists
+        createdDate.textContent = new Date(c.created).toLocaleString();
+
+        commentDiv.append(authorName, commentBody, createdDate);
+        commentsSection.appendChild(commentDiv);
+    });
+} else {
+        const noComments = document.createElement('p');
+        noComments.textContent = "No comments yet.";
+        commentsSection.appendChild(noComments);
+    }
+
+        const commentForm = document.createElement('div');
+        commentForm.classList = 'comment-form';
+        commentForm.id = 'comment-form';
+
+
+        const commentInput = document.createElement('textarea');
+        commentInput.classList = 'comment-input';
+        commentInput.id = 'comment-input';
+        commentInput.placeholder = "Write a comment...";
+        commentInput.required = true;
+
+
+        const submitBtn = document.createElement('button');
+        submitBtn.id = 'btn-submit-comment';
+        submitBtn.type = 'button';
+        submitBtn.classList = 'btn-submit-comment';
+        submitBtn.textContent = "Post Comment";
+
+        commentForm.append(commentInput, submitBtn);
+
+
+        postWrapper.appendChild(commentForm);
+
+    postWrapper.appendChild(commentsSection);
 
     return postWrapper;
 }   
