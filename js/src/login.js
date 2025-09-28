@@ -14,7 +14,6 @@ loginForm.addEventListener('submit', async (event) => {
 
     try {
         const result = await loginUser(credentials);
-        console.log("Login result:", result);
 
         if (result.data.accessToken) {
             saveToken(result.data.accessToken, {

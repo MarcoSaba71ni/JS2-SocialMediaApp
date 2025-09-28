@@ -16,7 +16,6 @@ async function loadSinglePost() {
 
         postsContent.appendChild(renderPost);
     } catch (error) {
-        console.log(error);
         throw new Error('The error is:', error);
     }
 

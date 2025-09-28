@@ -99,12 +99,3 @@ export class ApiError extends Error {
   }
 }
 
-// deletePost
-
-
-/* TO DO 
-    - check API endpoint for GET, POST, DELETE and UPDATE;
-    - add apiPut;
-    - add apiDelete
-    ;
-*/

@@ -3,7 +3,6 @@ export function profileInfoContent(profile) {
   profileInfo.classList = "profile-info";
 
   if (!profileInfo) {
-    console.error("❌ Could not find profile-info");
     return;
   }
 
@@ -12,11 +11,10 @@ export function profileInfoContent(profile) {
   const profileWrapper = document.createElement("div");
   profileWrapper.classList = "profile-wrapper";
 
-  // Images container
+
   const imagesDiv = document.createElement("div");
   imagesDiv.classList = "profile-images";
 
-  // Banner
   if (profile.banner?.url) {
     const banner = document.createElement("img");
     banner.src = profile.banner.url;
@@ -63,7 +61,6 @@ export function profileInfoContent(profile) {
 
   infoTxt.append(nameType, name, emailType, email, bioType, bio, counts);
 
-  // Assemble
   profileWrapper.append(imagesDiv, infoTxt);
   profileInfo.appendChild(profileWrapper);
 }

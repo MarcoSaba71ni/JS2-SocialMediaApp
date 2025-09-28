@@ -26,17 +26,14 @@ async function loadFeed() {
 
     try {
         const token = getToken();
-        console.log("Token from storage:", token);
         const posts = await getAllPosts(token);
         const allPosts = posts.data;
 
         renderPost(allPosts);
         searchSetup(allPosts, renderPost);
-        console.log(posts);
 
 
     } catch (error) {
-        console.error("Failed to load feed:", error);
         feedPost.innerHTML = "<p>Could not load posts.</p>";
     }
 }

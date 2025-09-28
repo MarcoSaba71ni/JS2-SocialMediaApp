@@ -16,7 +16,6 @@ export function saveToken(token, user) {
 
 export function getToken() {
     const token = localStorage.getItem('accessToken');
-    console.log("token", token);    
     return token;
 }
 

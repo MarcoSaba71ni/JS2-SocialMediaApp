@@ -24,15 +24,12 @@ async function loadEditPage () {
 
 
     } catch (error) {
-         console.error("Failed to load edit page:", error);
         editWrapper.innerHTML = "<p>Could not load post for editing.</p>";
     }
 
 
 
-// Get the id on the URL,
-// Fetch GET the API endpoint,
-// Display the content based on the ID (renderPost)
+
 }
 
 async function sendUpdatedValues(id, token) {
@@ -46,14 +43,10 @@ async function sendUpdatedValues(id, token) {
   };
 
   try {
-    console.log("PATCHing to:", `/social/posts/${id}`, updatedData);
     await apiUpdate(`/social/posts/${id}`, updatedData, token);
-    console.log("Token:", token);
-    console.log("Post ID:", id);
     alert("Post updated successfully!");
     window.location.href = `post.html?id=${id}`;
   } catch (error) {
-    console.error("Failed to update post:", error);
     alert("Could not update post. Try again.");
   }
 }

@@ -6,7 +6,6 @@ import { ApiError } from "../api/api.js";
 
 async function loadProfileInfo() {
     const username = getQuery("author");
-    console.log("👉 username param:", username);
     const token = getToken();
 
     try {
@@ -14,8 +13,6 @@ async function loadProfileInfo() {
         const profile = await profileGet(username, token); 
         const profileData = profile.data;
         profileInfoContent(profileData);
-
-        console.log("rendering profile:", profile);
 
     } catch (error) {
         console.log(error);   

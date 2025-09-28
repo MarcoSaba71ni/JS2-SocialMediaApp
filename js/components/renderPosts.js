@@ -29,7 +29,6 @@ export function postContent(post) {
     authorLink.href =  `./profile.html?author=${post.author.name}`;
     const author = document.createElement('h2');
     author.textContent = `${post.author?.name}`;
-    console.log(post.author);
     
     authorLink.appendChild(author);
 

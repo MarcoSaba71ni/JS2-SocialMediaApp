@@ -21,7 +21,6 @@ registerForm.addEventListener("submit", async (event) => {
         return; 
     }
 
-    console.log(userData);
     try {
         const response = await registerUser(userData);
         if(response.data?.name) {
@@ -32,7 +31,6 @@ registerForm.addEventListener("submit", async (event) => {
         }
 
     } catch (error) {
-        console.error(error);
         handleRegistrationError(error);
     }
 } );
