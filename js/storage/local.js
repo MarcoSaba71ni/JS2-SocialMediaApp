@@ -1,3 +1,14 @@
+
+/**
+ * 
+ * @param {string} token - accessToken autorization colected from localStorage  
+ * @param {Object} user - object collected from the localStorage that gets stringified.
+ * @returns {void} the function does not returns a value. It sends data to the localStorage.
+ * 
+ * @example
+ * // Save the token and the username in the localStorage
+ * saveToken('abcd1234', {name: 'emiliano', email: 'emiliano@stud.noroff.no'})
+ */
 export function saveToken(token, user) {
     localStorage.setItem('accessToken', token);
     localStorage.setItem('user', JSON.stringify(user));

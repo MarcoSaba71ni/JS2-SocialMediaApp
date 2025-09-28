@@ -2,7 +2,25 @@ import { getToken } from "../storage/local.js";
 import { deletePost } from "../utils/deletePost.js";
 import { getUser } from "../storage/local.js";
 import { followProfile, unfollowProfile } from "./follow-unfollow.js";
+import { commentValue } from "./commentPost.js";
 
+/**
+ * 
+ * @param {object} post - fetched post from imported apiGet function
+ * @param {object} post.author - author information containing name and email
+ * @param {string} post.title - title of the post
+ * @param {object} post.media - media information containing the url and alt
+ * @param {string} post.media.url - url of the media image.
+ * @param {string} post.media.alt - alternative text for the media image.
+ * @param {object} post._count - containing the count of comments and reactions
+ * @param {number} post._count.comments - number of comments.
+ * @param {number} post._count.reactions - number of reactions.
+ * @param {Array<Object>} [post.comments] - comments associated with the post.
+ * @returns {HTMLElement} A div element containing the rendered post content and interactive buttons.
+ * 
+ * @returns {HTMLElement} An array of objects rendering the html element for each looped post.
+ *
+ */
 export function postContent(post) {
     const postWrapper = document.createElement('div');
     postWrapper.classList = 'post-content';
@@ -106,18 +124,18 @@ export function postContent(post) {
 if (post.comments && post.comments.length > 0) {
     post.comments.forEach(c => {
         const commentDiv = document.createElement('div');
-        commentDiv.classList = 'comment'; // main wrapper
+        commentDiv.classList = 'comment'; 
 
         const authorName = document.createElement('strong');
-        authorName.classList = 'comment-author'; // added class
+        authorName.classList = 'comment-author';
         authorName.textContent = c.author?.name || c.owner;
 
         const commentBody = document.createElement('p');
-        commentBody.classList = 'comment-body'; // added class
+        commentBody.classList = 'comment-body'; 
         commentBody.textContent = c.body;
 
         const createdDate = document.createElement('span');
-        createdDate.classList = 'comment-date'; // already exists
+        createdDate.classList = 'comment-date';
         createdDate.textContent = new Date(c.created).toLocaleString();
 
         commentDiv.append(authorName, commentBody, createdDate);
@@ -131,18 +149,18 @@ if (post.comments && post.comments.length > 0) {
 
         const commentForm = document.createElement('div');
         commentForm.classList = 'comment-form';
-        commentForm.id = 'comment-form';
+        commentForm.id = `comment-form-${post.id}`;
 
 
         const commentInput = document.createElement('textarea');
         commentInput.classList = 'comment-input';
-        commentInput.id = 'comment-input';
+        commentInput.id = `comment-input-${post.id}`;
         commentInput.placeholder = "Write a comment...";
         commentInput.required = true;
 
 
         const submitBtn = document.createElement('button');
-        submitBtn.id = 'btn-submit-comment';
+        submitBtn.id = `btn-submit-comment-${post.id}`;
         submitBtn.type = 'button';
         submitBtn.classList = 'btn-submit-comment';
         submitBtn.textContent = "Post Comment";
@@ -153,6 +171,8 @@ if (post.comments && post.comments.length > 0) {
         postWrapper.appendChild(commentForm);
 
     postWrapper.appendChild(commentsSection);
+
+    commentValue(post.id, submitBtn.id, commentInput.id);
 
     return postWrapper;
 }   

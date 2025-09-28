@@ -1,6 +1,15 @@
 import { API_BASE } from "../utils/constants.js";
 import { API_KEY } from "../utils/constants.js";
-
+/** 
+* @param {string} endpoint - URL path
+* @param {string} token - value of the token 
+* @returns {Array} The fetched GET data from the URL 
+* @throws {ApiError} if the response status is not okay
+*
+* @example 
+* // Fetch post with autentication
+* const posts = await apiGet('/posts', 'access-token');
+*/
 export async function apiGet(endpoint, token = null) {
     const headers = {
         "X-Noroff-API-Key": API_KEY,

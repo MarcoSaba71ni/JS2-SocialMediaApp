@@ -8,7 +8,7 @@ function renderHeader() {
     const logoDiv = document.createElement('div');
 
     const logoAssembler = document.createElement('a');
-    logoAssembler.href = '../../feed.html';
+    logoAssembler.href = '../../pages/feed.html';
     const logo = document.createElement('img');
     logo.classList.add('logo-img');
     logo.src = '../../images/header-logo.png'; 
