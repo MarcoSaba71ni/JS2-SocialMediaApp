@@ -1,0 +1,9 @@
+@use "variables" as *;
+
+@use "../../node_modules/bootstrap/scss/bootstrap" with (
+  $primary: $primary,
+  $border-radius: $border-radius,
+);
+
+@use "index" as *;
+@use "register";

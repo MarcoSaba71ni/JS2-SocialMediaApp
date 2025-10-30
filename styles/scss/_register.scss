@@ -1,0 +1,26 @@
+@use "variables" as *;
+
+.register-wrapper {
+    background-color: $primary;
+}
+
+.form-wrapper input {
+    width: $input-width;
+    height: $input-height;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: $secondary;
+}
+
+/*.form-wrapper input {
+    width: 300px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    background-color: #1B0D6F;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+*/ 

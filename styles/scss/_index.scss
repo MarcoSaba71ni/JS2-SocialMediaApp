@@ -1,0 +1,26 @@
+@use "variables" as *;
+
+.index-wrapper {
+    background-color: $primary;
+    padding-top: 30px;
+}
+
+.index-logo {
+    width: $logo-width;
+    height: $logo-height;
+    object-fit: cover;
+}
+
+.btn-background {
+    background-color: $secondary;
+    font-family: $font-family-btn;
+    color: $tertiary;
+    width: $btn-width;
+    height: $btn-height;
+    font-size: 22px;
+
+    &:hover {
+        background-color: $tertiary;
+        color: $secondary;
+    }
+}

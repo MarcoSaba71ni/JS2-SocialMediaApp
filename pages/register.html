@@ -4,19 +4,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Feed Page Meddle">
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/register.css">
+        <link rel="stylesheet" href="../styles/css/styles.css" />
         <title>Register Page || Meddle</title>
     </head>
-    <body class="register-wrapper" >
+    <body class="register-wrapper d-flex flex-column justify-content-center align-items-center min-vh-100" >
         <nav>
-            <img src="../images/meddle- logo.png" class="index-logo">
+            <img src="../images/meddle- logo.png" class="container mx-auto index-logo ">
         </nav>
         <main>
-            <div id="register-body">
+            <div id="register-body" class="container mx-auto col">
                 <h1>Register</h1>
                 <p>Register your account if do not have one</p>
-                <form id="register-form" class="form-wrapper">
+                <form id="register-form" class="form-wrapper d-flex flex-column gap-1 container mx-auto">
                     <label>Username</label>
                     <input type="name" id="name" placeholder="Write your username">
                     
@@ -26,7 +25,7 @@
                     <label>Password</label>
                     <input type="password" id="password" placeholder="Write your password">
 
-                    <button class="btn-cta" type="submit" id="register-btn">Register</button>
+                    <button class="btn btn-background" type="submit" id="register-btn d-flex justify-content-center">Register</button>
                 </form>
             </div>
         </main>
