@@ -23,7 +23,7 @@ import { commentValue } from "./commentPost.js";
  */
 export function postContent(post) {
     const postWrapper = document.createElement('div');
-    postWrapper.classList = 'post-content';
+    postWrapper.classList.add("post-content", "container", "d-flex" ,"flex-column");
 
     const authorLink = document.createElement('a');
     authorLink.href =  `./profile.html?author=${post.author.name}`;
@@ -100,7 +100,7 @@ export function postContent(post) {
         divFollow.classList = 'div-follow';
 
         const followBtn = document.createElement('button');
-        followBtn.classList = 'btn-follow';
+        followBtn.classList.add("btn-background" );
         followBtn.textContent = 'Follow';
 
         followBtn.addEventListener('click', async () => {
@@ -147,7 +147,7 @@ if (post.comments && post.comments.length > 0) {
     }
 
         const commentForm = document.createElement('div');
-        commentForm.classList = 'comment-form';
+        commentForm.classList.add('comment-form', "d-flex", "flex-column");
         commentForm.id = `comment-form-${post.id}`;
 
 
@@ -161,8 +161,8 @@ if (post.comments && post.comments.length > 0) {
         const submitBtn = document.createElement('button');
         submitBtn.id = `btn-submit-comment-${post.id}`;
         submitBtn.type = 'button';
-        submitBtn.classList = 'btn-submit-comment';
-        submitBtn.textContent = "Post Comment";
+        submitBtn.classList.add( 'btn','btn-submit-comment');
+        submitBtn.textContent = "Comment";
 
         commentForm.append(commentInput, submitBtn);
 
@@ -175,6 +175,7 @@ if (post.comments && post.comments.length > 0) {
 
     return postWrapper;
 }   
+
 
 export function singlePost(post) {
     const wrapper = document.createElement("div");

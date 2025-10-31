@@ -4,8 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Feed Page Meddle">
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/feed.css">
+        <link href="../styles/css/styles.css" rel="stylesheet">
         <title>Feed Page || Meddle</title>
     </head>
     <body>
@@ -18,20 +17,21 @@
             </div>
         </header>
         <main>
-            <div class="post-creation">
-
-                <form class="create-section" id="creating-form">
-                    <h1>Create Your Post</h1>
-                    <input type="text" class="input-feed" id="title" placeholder="Post title" required>
-                    <textarea type="text" id="body" placeholder="Body"></textarea>
-                    <input type="text" id="media-url" class="input-feed" placeholder="Image URL">
-                    <input type="text" id="media-alt" class="input-feed" placeholder="Image description">
-                    <button type="submit" class="feed-btn">
+            
+            <div class="container post-creation">
+                <form class=" container create-section" id="creating-form">
+                    <h1 class="mx-auto">Create Your Post</h1>
+                    <input type="text" class="container input-feed" id="title" placeholder="Post title" required>
+                    <input type="text" id="media-url" class="container input-feed" placeholder="Image URL">
+                    <input type="text" id="media-alt" class="container input-feed" placeholder="Image description">
+                    <textarea type="text" class="container" id="body" placeholder="Body"></textarea>
+                    <button type="submit" class="container mx-auto btn feed-btn">
                         Create
                     </button>
                 </form>
             </div>
-            <div class="feed-grid" id="feed-posts">
+
+            <div class="feed-grid d-flex flex-column" id="feed-posts">
 
             </div>
         </main>

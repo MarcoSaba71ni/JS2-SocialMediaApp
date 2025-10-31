@@ -21,8 +21,16 @@ registerForm.addEventListener("submit", async (event) => {
         return; 
     }
 
+    const fieldset = document.querySelector("fieldset");
+    const registerBtn = document.getElementById("register-btn");
+    const originalBtnText = registerBtn.textContent;
+
     try {
+        registerBtn.textContent = "Registering...";
+        fieldset.disabled = true;
+
         const response = await registerUser(userData);
+
         if(response.data?.name) {
             alert('Registration succesfull. You are being redirected to the log in page.');
             window.location.href = '../pages/login.html';       
@@ -32,6 +40,11 @@ registerForm.addEventListener("submit", async (event) => {
 
     } catch (error) {
         handleRegistrationError(error);
+    }
+
+    finally {
+        fieldset.disabled = false;
+        registerBtn.textContent = originalBtnText;
     }
 } );
 

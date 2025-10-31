@@ -11907,5 +11907,66 @@ textarea.form-control-lg {
     padding-left: 10px;
 }
 */
+.create-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 450px;
+  background-color: #00E0AC;
+  color: #1B0D6F;
+  padding: 20px 20px;
+  border-radius: 12px;
+}
+.create-section input {
+  width: 300px;
+  height: 30px;
+  color: #1B0D6F;
+}
+.create-section button {
+  background-color: #1B0D6F;
+  color: white;
+  width: 70px;
+  border: 2px solid #1B0D6F;
+}
+.create-section button:hover {
+  background-color: white;
+  color: #1B0D6F;
+  cursor: pointer;
+  border: 1px solid #1B0D6F;
+}
+
+.feed-grid {
+  padding-top: 10px;
+}
+
+.post-content {
+  margin-top: 20px;
+  border: 1px solid #1B0D6F;
+  padding: 15px;
+  gap: 5px;
+  border-radius: 12px;
+  width: 80%;
+}
+
+.img-feed {
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.comment-form {
+  gap: 5px;
+}
+
+.btn-submit-comment {
+  width: 105px;
+  height: 50px;
+  background-color: #1B0D6F;
+  color: white;
+}
+
+.comment-input {
+  width: 50%;
+}
 
 /*# sourceMappingURL=styles.css.map */
