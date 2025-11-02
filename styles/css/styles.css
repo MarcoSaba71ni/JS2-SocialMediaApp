@@ -11907,6 +11907,36 @@ textarea.form-control-lg {
     padding-left: 10px;
 }
 */
+.js-header {
+  background-color: #00E0AC;
+  height: 60px;
+  justify-content: space-around;
+  align-items: center;
+}
+.js-header img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+.js-header .header-search {
+  width: 300px;
+  height: 35px;
+  background-color: #1B0D6F;
+  color: white;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+.js-header .log-out-btn {
+  background-color: red;
+  color: white;
+  border: solid 1px black;
+  border-radius: 5px;
+  height: 30px;
+}
+.js-header .profile-link {
+  color: #1B0D6F;
+}
+
 .create-section {
   display: flex;
   flex-direction: column;
@@ -11916,6 +11946,7 @@ textarea.form-control-lg {
   color: #1B0D6F;
   padding: 20px 20px;
   border-radius: 12px;
+  margin-top: 10px;
 }
 .create-section input {
   width: 300px;
@@ -11967,6 +11998,17 @@ textarea.form-control-lg {
 
 .comment-input {
   width: 50%;
+}
+
+.load-btn {
+  width: auto;
+  border-radius: 12px;
+}
+
+.footer {
+  background-color: #00E0AC;
+  height: 50px;
+  width: 90%;
 }
 
 /*# sourceMappingURL=styles.css.map */

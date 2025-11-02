@@ -1,4 +1,4 @@
-import { checkAuth } from "../utils/checkAuth.js";
+/*import { checkAuth } from "../utils/checkAuth.js";
 import { getAllPosts } from "../api/posts.js";
 import { getToken } from "../storage/local.js";
 import {postContent} from "../components/renderPosts.js";
@@ -40,4 +40,4 @@ async function loadFeed() {
 
 
 
-loadFeed(); 
+loadFeed(); */

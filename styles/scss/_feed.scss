@@ -1,5 +1,45 @@
 @use "variables" as *;
 
+//header 
+
+.js-header {
+    background-color: $primary;
+    height: 60px;
+    justify-content: space-around;
+    align-items: center;
+
+    img  {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+    }
+
+    .header-search {
+        width: 300px;
+        height: 35px;
+        background-color: $secondary;
+        color: $tertiary;
+        border-radius: 10px;
+        padding-left: 10px;
+    }
+
+    .log-out-btn {
+        background-color: red;
+        color: $tertiary;
+        border: solid 1px black;
+        border-radius: 5px;
+        height: 30px;
+    }
+
+    .profile-link {
+        color: $secondary;
+    }
+
+
+}
+
+
+
 // post creation zone
 .create-section {
     display: flex;
@@ -10,6 +50,7 @@
     color: $secondary;
     padding: 20px 20px;
     border-radius: $border-radius;
+    margin-top: 10px;
 
     input {
         width: 300px;
@@ -68,4 +109,18 @@
 
 .comment-input {
     width: 50%;
+}
+// Load Button
+
+.load-btn {
+    width: auto;
+    border-radius: $border-radius;
+}
+
+// Footer
+
+.footer {
+    background-color: $primary;
+    height: 50px;
+    width: 90%;
 }
