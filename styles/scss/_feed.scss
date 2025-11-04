@@ -21,22 +21,34 @@
         color: $tertiary;
         border-radius: 10px;
         padding-left: 10px;
+
+        @media (max-width: 576px) {
+            width: 50%;
+            height: auto;
+        }
     }
 
-    .log-out-btn {
-        background-color: red;
-        color: $tertiary;
-        border: solid 1px black;
-        border-radius: 5px;
-        height: 30px;
-    }
+    
+    .btn-div {
+        display: flex;
+        
+        @media (max-width: 576px) {
+            display: none;
+        }
 
-    .profile-link {
-        color: $secondary;
-    }
+        .log-out-btn {
+            background-color: red;
+            color: $tertiary;
+            border: solid 1px black;
+            border-radius: 5px;
+            height: 30px;
+        }
 
+        .profile-link {
+            color: $secondary;
+        }
+}}
 
-}
 
 
 
@@ -52,11 +64,31 @@
     border-radius: $border-radius;
     margin-top: 10px;
 
+    @media (max-width: 576px) {
+        width: 80%;
+        height: auto;
+    }
+
     input {
         width: 300px;
         height: 30px;
-        color: #1B0D6F;
+        
+        @media (max-width: 576px) {
+            width: 200px !important;
+            height: auto !important;
+        }
     }
+
+    textarea {
+        width: 350px;
+        height: 50px;
+
+        @media (max-width: 576px) {
+            width: 250px;
+            height: auto;
+        }
+    }
+    
 
     button {
         background-color: $secondary;
@@ -72,7 +104,9 @@
         }
     }
 
+        @media (max-width: 576px) {
 
+    }
 }
 
 // feed posts
@@ -94,6 +128,12 @@
     width: $feed-img-width;
     height: $feed-img-height;
     object-fit: cover;
+
+     @media (max-width: 576px) { // small devices (≥576px)
+    width: 200px;
+    height: auto;
+  }
+
 }
 
 .comment-form {

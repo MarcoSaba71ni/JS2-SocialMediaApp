@@ -5,21 +5,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Feed Page Meddle">
         <link href="../styles/css/styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <title>Feed Page || Meddle</title>
     </head>
     <body class="min-vh-100 d-flex flex-column">
         <header class="header-content">
-            <div class="container js-header d-flex" >
+            <div class="container js-header d-flex " >
                 <div>
                     <a href="../../pages/feed.html">
                     <img class="logo-img" src="../../images/header-logo.png" alt="Header Logo"></a>
                 </div>
                 <input type="text" placeholder="Search Post and Profiles..." id="search-bar" class="header-search">
-                <div class=" d-flex gap-2 btn-div" id="btn-div">    
+                <div class="d-flex gap-2 btn-div" id="btn-div">    
                     <div>
                         <a href="../../pages/profile.html" class="profile-link">Profile</a>
                     </div>
                     <button type="submit" class="log-out-btn" id="logout-btn">Logout</button>
+                </div>
+                <div class="burguer-div">
+                    <i class="fa-solid fa-bars" style="color: #264d92;"></i>
                 </div>
             </div>
         </header>
@@ -31,7 +35,7 @@
                     <input type="text" class="container input-feed" id="title" placeholder="Post title" required>
                     <input type="text" id="media-url" class="container input-feed" placeholder="Image URL">
                     <input type="text" id="media-alt" class="container input-feed" placeholder="Image description">
-                    <textarea type="text" class="container" id="body" placeholder="Body"></textarea>
+                    <textarea type="text" class="container text-area-feed" id="body" placeholder="Body"></textarea>
                     <button type="submit" class="container mx-auto btn feed-btn">
                         Create
                     </button>

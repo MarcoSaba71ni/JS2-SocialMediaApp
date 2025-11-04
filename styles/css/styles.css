@@ -11869,6 +11869,12 @@ textarea.form-control-lg {
   height: 150px;
   object-fit: cover;
 }
+@media (max-width: 576px) {
+  .index-logo {
+    width: 200px;
+    height: auto;
+  }
+}
 
 .btn-background {
   background-color: #1B0D6F;
@@ -11926,14 +11932,28 @@ textarea.form-control-lg {
   border-radius: 10px;
   padding-left: 10px;
 }
-.js-header .log-out-btn {
+@media (max-width: 576px) {
+  .js-header .header-search {
+    width: 50%;
+    height: auto;
+  }
+}
+.js-header .btn-div {
+  display: flex;
+}
+@media (max-width: 576px) {
+  .js-header .btn-div {
+    display: none;
+  }
+}
+.js-header .btn-div .log-out-btn {
   background-color: red;
   color: white;
   border: solid 1px black;
   border-radius: 5px;
   height: 30px;
 }
-.js-header .profile-link {
+.js-header .btn-div .profile-link {
   color: #1B0D6F;
 }
 
@@ -11948,10 +11968,31 @@ textarea.form-control-lg {
   border-radius: 12px;
   margin-top: 10px;
 }
+@media (max-width: 576px) {
+  .create-section {
+    width: 80%;
+    height: auto;
+  }
+}
 .create-section input {
   width: 300px;
   height: 30px;
-  color: #1B0D6F;
+}
+@media (max-width: 576px) {
+  .create-section input {
+    width: 200px !important;
+    height: auto !important;
+  }
+}
+.create-section textarea {
+  width: 350px;
+  height: 50px;
+}
+@media (max-width: 576px) {
+  .create-section textarea {
+    width: 250px;
+    height: auto;
+  }
 }
 .create-section button {
   background-color: #1B0D6F;
@@ -11965,7 +12006,6 @@ textarea.form-control-lg {
   cursor: pointer;
   border: 1px solid #1B0D6F;
 }
-
 .feed-grid {
   padding-top: 10px;
 }
@@ -11983,6 +12023,12 @@ textarea.form-control-lg {
   width: 500px;
   height: 300px;
   object-fit: cover;
+}
+@media (max-width: 576px) {
+  .img-feed {
+    width: 200px;
+    height: auto;
+  }
 }
 
 .comment-form {
