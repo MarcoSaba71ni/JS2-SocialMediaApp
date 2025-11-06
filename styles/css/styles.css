@@ -11899,20 +11899,17 @@ textarea.form-control-lg {
   border-radius: 5px;
   border: 1px solid black;
   color: #1B0D6F;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 576px) {
+  .form-wrapper input {
+    justify-content: center;
+    width: 200px !important;
+    height: auto !important;
+  }
 }
 
-/*.form-wrapper input {
-    width: 300px;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    background-color: #1B0D6F;
-    color: white;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding-left: 10px;
-}
-*/
 .js-header {
   background-color: #00E0AC;
   height: 60px;
@@ -12010,27 +12007,23 @@ textarea.form-control-lg {
   padding-top: 10px;
 }
 
+.feed-posts {
+  flex-wrap: wrap;
+}
+
 .post-content {
+  width: 350px;
+  flex-wrap: wrap;
   margin-top: 20px;
   border: 1px solid #1B0D6F;
   padding: 15px;
-  gap: 5px;
   border-radius: 12px;
-  width: 80%;
 }
 
 .img-feed {
-  width: 500px;
-  height: 300px;
+  height: 250px;
   object-fit: cover;
 }
-@media (max-width: 576px) {
-  .img-feed {
-    width: 200px;
-    height: auto;
-  }
-}
-
 .comment-form {
   gap: 5px;
 }
@@ -12055,6 +12048,12 @@ textarea.form-control-lg {
   background-color: #00E0AC;
   height: 50px;
   width: 90%;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=styles.css.map */

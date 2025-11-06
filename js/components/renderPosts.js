@@ -23,7 +23,11 @@ import { commentValue } from "./commentPost.js";
  */
 export function postContent(post) {
     const postWrapper = document.createElement('div');
-    postWrapper.classList.add("post-content", "container", "d-flex" ,"flex-column");
+      postWrapper.classList.add("col-md-4", "mb-4", "post-content"); // 3 per row on medium+ screens
+
+    const card = document.createElement('div');
+    card.classList.add("card", "d-flex", "flex-column", "gap-2", "h-100", "shadow-sm");
+
 
     const authorLink = document.createElement('a');
     authorLink.href =  `./profile.html?author=${post.author.name}`;
@@ -38,7 +42,7 @@ export function postContent(post) {
 
     if(post.media?.url) {
         const mediaUrl = document.createElement('img');
-        mediaUrl.classList = "img-feed";
+        mediaUrl.classList.add("img-feed", "card-img-top")
         mediaUrl.src = post.media.url;
         mediaUrl.alt = post.media.alt;
 
