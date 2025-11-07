@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Feed Page Meddle">
         <link href="../styles/css/styles.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -15,31 +17,55 @@
         <title>Feed Page || Meddle</title>
     </head>
     <body class="min-vh-100 d-flex flex-column">
-        <header class="header-content">
+        <nav class="navbar container navbar-expand-lg bg-body-primary px-3">
+            <div class="container-fluid">
 
-                <div class="container js-header d-flex " >
-                    <div>
-                        <a href="../../pages/feed.html">
-                        <img class="logo-img" src="../../images/header-logo.png" alt="Header Logo"></a>
-                    </div>
-                    <input type="text" placeholder="Search Post and Profiles..." id="search-bar" class="header-search">
-                    <div class="d-flex gap-2 btn-div" id="btn-div">    
-                        <div>
-                            <a href="../../pages/profile.html" class="profile-link">Profile</a>
-                        </div>
-                        <button type="submit" class="log-out-btn" id="logout-btn">Logout</button>
-                    </div>
-                    <div class="container-fluid">
-                        <button data-mdb-button-init class="navbar-toggler ms-auto" type="button" data-mdb-collapse-init
-                        data-mdb-target="#navbarToggleExternalContent3" aria-controls="navbarToggleExternalContent3"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-bars"></i>
-                        </button>
-                    </div>
-                </div>
+                <!-- Logo -->
+                <a class="navbar-brand" href="../../pages/feed.html">
+                    <img class="logo-img" src="../../images/header-logo.png" alt="Header Logo" height="40">
+                </a>
 
-           
-        </header>
+                <!-- Center Search -->
+                <form id="search-form" class="header-search d-flex mx-auto w-50" role="search">
+                    <input 
+                        type="text"
+                        id="search-bar"
+                        class="form-control me-2"
+                        placeholder="Search Post and Profiles..."
+                        aria-label="Search"
+                    />
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+
+                <!-- Burger (mobile toggle) -->
+                <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!--Dropdown Burguer-->
+                 <!-- Collapsible Menu -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+                <ul class="navbar-nav mb-2 mb-lg-0 align-items-center text-end">
+                    <li class="nav-item">
+                    <a class="nav-link text-light" href="../../pages/profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                    <button class="btn btn-danger ms-lg-3 w-100" id="logout-btn">Logout</button>
+                    </li>
+                </ul>
+            </div>
+
+                <!-- Profile + Logout -->
+            </div>
+        </nav>
         <main class="flex-grow-1">
             
             <div class="container post-creation">

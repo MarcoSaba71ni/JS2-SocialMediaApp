@@ -11954,6 +11954,14 @@ textarea.form-control-lg {
   color: #1B0D6F;
 }
 
+@media (max-width: 567px) {
+  .btn-outline-success {
+    width: 50px;
+    height: auto;
+    font-size: 16px;
+  }
+}
+
 .create-section {
   display: flex;
   flex-direction: column;
@@ -12048,6 +12056,29 @@ textarea.form-control-lg {
   background-color: #00E0AC;
   height: 50px;
   width: 90%;
+}
+
+.navbar.bg-body-primary {
+  background-color: #00E0AC !important;
+  justify-content: space-around;
+}
+
+.navbar.form {
+  width: 300px;
+}
+
+.header-search {
+  width: 300px;
+  height: 35px;
+  color: white;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+@media (max-width: 576px) {
+  .header-search {
+    width: 50%;
+    height: auto;
+  }
 }
 
 .logo-img {

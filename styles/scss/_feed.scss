@@ -51,6 +51,13 @@
     
 }
 
+.btn-outline-success {
+    @media (max-width: 567px) {
+        width: 50px;
+        height: auto;
+        font-size: 16px;
+    }
+}
 
 
 

@@ -12,40 +12,94 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
-        <title>Feed Page || Meddle</title>
+        <title>Header Page || Meddle</title>
     </head>
     <body class="min-vh-100 d-flex flex-column">
 
-
-<nav class="navbar navbar-expand-lg bg-body-primary">
+<nav class="navbar navbar-expand-lg bg-body-primary px-3">
   <div class="container-fluid">
+
+    <!-- Logo -->
     <a class="navbar-brand" href="../../pages/feed.html">
-        <img class="logo-img" src="../../images/header-logo.png" alt="Header Logo">
+      <img class="logo-img" src="../../images/header-logo.png" alt="Header Logo" height="40">
     </a>
 
+    <!-- Center Search -->
+    <form class="header-search d-flex mx-auto w-50" role="search">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search Post and Profiles..."
+        aria-label="Search"
+      />
+    </form>
 
-    <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>    
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- Burger (mobile toggle) -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <!-- Profile + Logout -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0 align-items-center">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Profile</a>
+          <a class="nav-link active" href="../../pages/profile.html">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Logout</a>
+          <button class="btn btn-danger ms-lg-3" id="logout-btn">Logout</button>
         </li>
       </ul>
-
     </div>
   </div>
 </nav>
+    <!--Dropdown Burguer-->
+<div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+  <div class="bg-primary p-3">
+    <ul class="list-unstyled m-0">
+      <li class="mb-2">
+        <a href="../../pages/profile.html" class="text-light text-decoration-none">Profile</a>
+      </li>
+      <li>
+        <button class="btn btn-danger w-100" id="logout-btn">Logout</button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<header class="header-content">
+
+                <div class="container js-header d-flex ">
+                    <div>
+                        <a href="../../pages/feed.html">
+                        <img class="logo-img" src="../../images/header-logo.png" alt="Header Logo"></a>
+                    </div>
+                    <input type="text" placeholder="Search Post and Profiles..." id="search-bar" class="header-search">
+                    <div class="d-flex gap-2 btn-div" id="btn-div">    
+                        <div>
+                            <a href="../../pages/profile.html" class="profile-link">Profile</a>
+                        </div>
+                        <button type="submit" class="log-out-btn" id="logout-btn">Logout</button>
+                    </div>
+                    <div class="container-fluid">
+                        <button data-mdb-button-init class="navbar-toggler ms-auto" type="button" data-mdb-collapse-init
+                        data-mdb-target="#navbarToggleExternalContent3" aria-controls="navbarToggleExternalContent3"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+
+           
+        </header>
+
 
     <script type="module" src="../js/src/logout.js"></script>
     <script type="module" src="../js/src/feed.js"></script>
