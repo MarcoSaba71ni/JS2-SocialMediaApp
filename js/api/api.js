@@ -11,6 +11,7 @@ import { API_KEY } from "../utils/constants.js";
 * const posts = await apiGet('/posts', 'access-token');
 */
 export async function apiGet(endpoint, token = null) {
+    
     const headers = {
         "X-Noroff-API-Key": API_KEY,
         "Content-Type": "application/json",

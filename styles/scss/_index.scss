@@ -9,7 +9,14 @@
     width: $logo-width;
     height: $logo-height;
     object-fit: cover;
+
+  @media (max-width: 576px) { 
+    width: 200px;
+    height: auto;
+  }
 }
+
+
 
 .btn-background {
     background-color: $secondary;

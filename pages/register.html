@@ -7,26 +7,28 @@
         <link rel="stylesheet" href="../styles/css/styles.css" />
         <title>Register Page || Meddle</title>
     </head>
-    <body class="register-wrapper d-flex flex-column justify-content-center align-items-center min-vh-100" >
+    <body class="register-wrapper d-flex flex-column justify-content-center align-items-center min-vh-100 text-center" >
         <nav>
             <img src="../images/meddle- logo.png" class="container mx-auto index-logo ">
         </nav>
         <main>
-            <div id="register-body" class="container mx-auto col">
+            <div id="register-body" class="container mx-auto">
                 <h1>Register</h1>
                 <p>Register your account if do not have one</p>
-                <form id="register-form" class="form-wrapper d-flex flex-column gap-1 container mx-auto">
-                    <label>Username</label>
-                    <input type="name" id="name" placeholder="Write your username">
-                    
-                    <label>Email</label>
-                    <input type="email" id="email" placeholder="Write your email">
-                    
-                    <label>Password</label>
-                    <input type="password" id="password" placeholder="Write your password">
+                <fieldset id="fieldset" class="container">
+                    <form id="register-form" class="form-wrapper d-flex flex-column gap-1 container mx-auto">
+                        <label for="name">Username</label>
+                        <input type="name" id="name" placeholder="Write your username">
+                        
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Write your email">
+                        
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Write your password">
 
-                    <button class="btn btn-background" type="submit" id="register-btn d-flex justify-content-center">Register</button>
-                </form>
+                        <button class="btn btn-background d-flex justify-content-center mt-2 mx-auto" type="submit" id="register-btn">Register</button>
+                    </form>
+                </fieldset>
             </div>
         </main>
     <script type="module" src="../js/src/register.js"></script>

@@ -4,39 +4,98 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Feed Page Meddle">
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/feed.css">
+        <link href="../styles/css/styles.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kz1lfnD5Fnb7LQz5RrG4Gsm9w6cQxG0DsOfWW5W7lsb2Kz8oTb6g0fXz5H7KSTNsmSbKj5B8W4pYoV7JfVh1sw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
         <title>Feed Page || Meddle</title>
     </head>
-    <body>
-        <header id="header" class="header-content">
-            <div class="js-header" id="js-header">
+    <body class="min-vh-100 d-flex flex-column">
+        <nav class="navbar container navbar-expand-lg bg-body-primary px-3">
+            <div class="container-fluid">
 
+                <!-- Logo -->
+                <a class="navbar-brand" href="../../pages/feed.html">
+                    <img class="logo-img" src="../../images/header-logo.png" alt="Header Logo" height="40">
+                </a>
+
+                <!-- Center Search -->
+                <form id="search-form" class="header-search d-flex mx-auto w-50" role="search">
+                    <input 
+                        type="text"
+                        id="search-bar"
+                        class="form-control me-2"
+                        placeholder="Search Post and Profiles..."
+                        aria-label="Search"
+                    />
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+
+                <!-- Burger (mobile toggle) -->
+                <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!--Dropdown Burguer-->
+                 <!-- Collapsible Menu -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+                <ul class="navbar-nav mb-2 mb-lg-0 align-items-center text-end">
+                    <li class="nav-item">
+                    <a class="nav-link text-light" href="../../pages/profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                    <button class="btn btn-danger ms-lg-3 w-100" id="logout-btn">Logout</button>
+                    </li>
+                </ul>
             </div>
-            <div class="btn-div" id="btn-div">
+
+                <!-- Profile + Logout -->
+            </div>
+        </nav>
+        <main class="flex-grow-1">
+            
+            <div class="container post-creation">
+                <fieldset>
+                    <form class=" container create-section" id="creating-form" disabled>
+                        <h1 class="mx-auto">Create Your Post</h1>
+                        <input type="text" class="container input-feed" id="title" placeholder="Post title" required>
+                        <input type="text" id="media-url" class="container input-feed" placeholder="Image URL">
+                        <input type="text" id="media-alt" class="container input-feed" placeholder="Image description">
+                        <textarea type="text" class="container text-area-feed" id="body" placeholder="Body"></textarea>
+                        <button type="submit" class="container mx-auto btn feed-btn" id="create-btn">
+                            Create
+                        </button>
+                    </form>
+                </fieldset>
                 
             </div>
-        </header>
-        <main>
-            <div class="post-creation">
 
-                <form class="create-section" id="creating-form">
-                    <h1>Create Your Post</h1>
-                    <input type="text" class="input-feed" id="title" placeholder="Post title" required>
-                    <textarea type="text" id="body" placeholder="Body"></textarea>
-                    <input type="text" id="media-url" class="input-feed" placeholder="Image URL">
-                    <input type="text" id="media-alt" class="input-feed" placeholder="Image description">
-                    <button type="submit" class="feed-btn">
-                        Create
-                    </button>
-                </form>
+            <div class="feed-grid container">
+                <div class="feed-posts d-flex justify-content-center row gap-2" id="feed-posts">
+
+                </div>
             </div>
-            <div class="feed-grid" id="feed-posts">
-
+            <div class="container mx-auto loading-div pt-2 pb-2 d-flex align-items-center justify-content-center">
+                <button id="load-more-btn" class="btn-background load-btn">Load More</button>
             </div>
         </main>
-        <footer id="footer" class="footer">
-            
+
+        <footer class="footer d-flex justify-content-center align-items-center mx-auto mt-auto">
+            <p class="text-center m-0">&copy; 2025 Meddle. All rights reserved.</p>
         </footer>
     <script type="module" src="../js/src/logout.js"></script>
     <script type="module" src="../js/src/feed.js"></script>
