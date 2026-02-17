@@ -5,10 +5,10 @@ const registerBtn = document.getElementById('register-index');
 
 loginBtn.addEventListener("click", ()=> {
     checkAuth();
-    window.location.href = "../../pages/login.html";
+    window.location.href = "pages/login.html";
 })
 
 registerBtn.addEventListener("click", ()=> {
     checkAuth();
-    window.location.href =  "../../pages/register.html";
+    window.location.href =  "pages/register.html";
 })
