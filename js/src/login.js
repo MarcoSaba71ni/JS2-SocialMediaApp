@@ -19,7 +19,7 @@ loginForm.addEventListener('submit', async (event) => {
             saveToken(result.data.accessToken, {
                  name: result.data.name, email: result.data.email
             });
-            window.location.href = "../../pages/feed.html";
+            window.location.href = "feed.html";
         } else if (result.errors?.[0]) {
             alert(result.errors[0].message);
         }
