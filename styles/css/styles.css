@@ -11869,6 +11869,12 @@ textarea.form-control-lg {
   height: 150px;
   object-fit: cover;
 }
+@media (max-width: 576px) {
+  .index-logo {
+    width: 200px;
+    height: auto;
+  }
+}
 
 .btn-background {
   background-color: #1B0D6F;
@@ -11893,19 +11899,192 @@ textarea.form-control-lg {
   border-radius: 5px;
   border: 1px solid black;
   color: #1B0D6F;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 576px) {
+  .form-wrapper input {
+    justify-content: center;
+    width: 200px !important;
+    height: auto !important;
+  }
 }
 
-/*.form-wrapper input {
-    width: 300px;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    background-color: #1B0D6F;
-    color: white;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding-left: 10px;
+.js-header {
+  background-color: #00E0AC;
+  height: 60px;
+  justify-content: space-around;
+  align-items: center;
 }
-*/
+.js-header img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+.js-header .header-search {
+  width: 300px;
+  height: 35px;
+  background-color: #1B0D6F;
+  color: white;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+@media (max-width: 576px) {
+  .js-header .header-search {
+    width: 50%;
+    height: auto;
+  }
+}
+.js-header .btn-div {
+  display: flex;
+}
+@media (max-width: 576px) {
+  .js-header .btn-div {
+    display: none;
+  }
+}
+.js-header .btn-div .log-out-btn {
+  background-color: red;
+  color: white;
+  border: solid 1px black;
+  border-radius: 5px;
+  height: 30px;
+}
+.js-header .btn-div .profile-link {
+  color: #1B0D6F;
+}
+
+@media (max-width: 567px) {
+  .btn-outline-success {
+    width: 50px;
+    height: auto;
+    font-size: 16px;
+  }
+}
+
+.create-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 450px;
+  background-color: #00E0AC;
+  color: #1B0D6F;
+  padding: 20px 20px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+@media (max-width: 576px) {
+  .create-section {
+    width: 80%;
+    height: auto;
+  }
+}
+.create-section input {
+  width: 300px;
+  height: 30px;
+}
+@media (max-width: 576px) {
+  .create-section input {
+    width: 200px !important;
+    height: auto !important;
+  }
+}
+.create-section textarea {
+  width: 350px;
+  height: 50px;
+}
+@media (max-width: 576px) {
+  .create-section textarea {
+    width: 250px;
+    height: auto;
+  }
+}
+.create-section button {
+  background-color: #1B0D6F;
+  color: white;
+  width: 70px;
+  border: 2px solid #1B0D6F;
+}
+.create-section button:hover {
+  background-color: white;
+  color: #1B0D6F;
+  cursor: pointer;
+  border: 1px solid #1B0D6F;
+}
+.feed-grid {
+  padding-top: 10px;
+}
+
+.feed-posts {
+  flex-wrap: wrap;
+}
+
+.post-content {
+  width: 350px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  border: 1px solid #1B0D6F;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.img-feed {
+  height: 250px;
+  object-fit: cover;
+}
+.comment-form {
+  gap: 5px;
+}
+
+.btn-submit-comment {
+  width: 105px;
+  height: 50px;
+  background-color: #1B0D6F;
+  color: white;
+}
+
+.comment-input {
+  width: 50%;
+}
+
+.load-btn {
+  width: auto;
+  border-radius: 12px;
+}
+
+.footer {
+  background-color: #00E0AC;
+  height: 50px;
+  width: 90%;
+}
+
+.navbar.bg-body-primary {
+  background-color: #00E0AC !important;
+  justify-content: space-around;
+}
+
+.navbar.form {
+  width: 300px;
+}
+
+.header-search {
+  width: 300px;
+  height: 35px;
+  color: white;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+@media (max-width: 576px) {
+  .header-search {
+    width: 50%;
+    height: auto;
+  }
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
 
 /*# sourceMappingURL=styles.css.map */

@@ -11,6 +11,8 @@ const mediaaAlt = document.getElementById('media-alt');
 
 const profileEndpoint = '/social/posts';
 const creatingForm = document.getElementById('creating-form');
+const createBtn = document.getElementById('create-btn');
+const contentCreateBtn = createBtn.textContent;
 
 
 creatingForm.addEventListener("submit", async (event) => {
@@ -34,6 +36,12 @@ creatingForm.addEventListener("submit", async (event) => {
     const token = getToken();
 
     try {
+
+        const inputs = creatingForm.querySelectorAll("input","textarea","button");
+        inputs.forEach((el) => (el.disabled = true));
+        contentCreateBtn.textContent = "Creating";
+
+
         const createdPost = await apiPost(profileEndpoint, info, token);
 
         const fullPost = await getAllPosts(token);
@@ -43,10 +51,15 @@ creatingForm.addEventListener("submit", async (event) => {
         const feedPosts = document.getElementById('feed-posts');
         const newPost = postContent(newPostData);
 
+
+
         feedPosts.prepend(newPost);
         creatingForm.reset();
     } catch (error){
         throw new ApiError;
+    } finally {
+        createBtn.textContent = contentCreateBtn;
+        inputs.forEach((el) => (el.disabled = true));
     }
 
 

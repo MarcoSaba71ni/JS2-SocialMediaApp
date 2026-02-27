@@ -1,6 +1,6 @@
 
 
-const headerWrapper = document.getElementById('header');
+/*const headerWrapper = document.getElementById('header');
 
 function renderHeader() {
     const jsHeader = document.getElementById('js-header');
