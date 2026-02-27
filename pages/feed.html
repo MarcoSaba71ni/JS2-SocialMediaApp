@@ -4,33 +4,113 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Feed Page Meddle">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../styles/css/styles.css">
         <link rel="stylesheet" href="../css/feed.css">
         <title>Feed Page || Meddle</title>
     </head>
     <body>
-        <header id="header" class="header-content">
-            <div class="js-header" id="js-header">
+    <header class="bg-primary py-3">
+    <div class="container row align-items-center">
+
+        <!-- LEFT SIDE -->
+        <div class="col-md-6 d-flex align-items-center gap-3">
+
+        <!-- Logo -->
+        <img src="../images/header-logo.png" 
+            class="img-fluid" 
+            style="max-height: 50px;" 
+            alt="Logo">
+
+        <!-- Search -->
+        <div class="input-group w-75">
+            <input 
+            type="text" 
+            class="form-control" 
+            placeholder="Search for posts">
+            <button class="btn btn-primary border">
+            Search
+            </button>
+        </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="col-md-6 d-flex justify-content-md-end justify-content-start align-items-center gap-3 mt-3 mt-md-0">
+
+        <a href="#" class="text-decoration-none text-dark fw-semibold">
+            Profile
+        </a>
+
+        <button class="btn btn-outline-danger">
+            Logout
+        </button>
+        </div>
+    </div>
+    </header>
+    <main>
+        <div class="container my-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+
+            <h4 class="card-title mb-4">Create Your Post</h4>
+
+            <form id="creating-form">
+
+                <!-- Title -->
+                <div class="mb-3">
+                <label for="title" class="form-label">Post Title</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="title" 
+                    placeholder="Enter post title" 
+                    required>
+                </div>
+
+                <!-- Body -->
+                <div class="mb-3">
+                <label for="body" class="form-label">Post Content</label>
+                <textarea 
+                    class="form-control" 
+                    id="body" 
+                    rows="4"
+                    placeholder="Write something...">
+                </textarea>
+                </div>
+
+                <!-- Media Section -->
+                <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="media-url" class="form-label">Image URL</label>
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    id="media-url" 
+                    placeholder="https://example.com/image.jpg">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="media-alt" class="form-label">Image Description</label>
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    id="media-alt" 
+                    placeholder="Describe the image">
+                </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="d-grid">
+                <button type="submit" class="btn btn-primary">
+                    Create Post
+                </button>
+                </div>
+
+            </form>
 
             </div>
-            <div class="btn-div" id="btn-div">
-                
-            </div>
-        </header>
-        <main>
-            <div class="post-creation">
-
-                <form class="create-section" id="creating-form">
-                    <h1>Create Your Post</h1>
-                    <input type="text" class="input-feed" id="title" placeholder="Post title" required>
-                    <textarea type="text" id="body" placeholder="Body"></textarea>
-                    <input type="text" id="media-url" class="input-feed" placeholder="Image URL">
-                    <input type="text" id="media-alt" class="input-feed" placeholder="Image description">
-                    <button type="submit" class="feed-btn">
-                        Create
-                    </button>
-                </form>
-            </div>
+        </div>
+        </div>
             <div class="feed-grid" id="feed-posts">
 
             </div>
@@ -40,10 +120,7 @@
         </footer>
     <script type="module" src="../js/src/logout.js"></script>
     <script type="module" src="../js/src/feed.js"></script>
-    <script type="module" src="../js/components/header.js"></script>
-    <script type="module" src="../js/components/footer.js"></script>
     <script type="module" src="../js/components/postCreation.js"></script>
-    <script type="module" src="../js/components/searchBar.js"></script>
     <script type="module" src="../js/components/commentPost.js"></script>
 </body>
 </html>
